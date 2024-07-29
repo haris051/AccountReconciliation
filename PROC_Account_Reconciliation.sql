@@ -45,24 +45,24 @@ BEGIN
 										  FORM_DATE,
 										  FORM_REFERENCE,
 										  CASE 
-												WHEN A.GL_FLAG = 15 OR A.GL_FLAG = 16 OR A.GL_FLAG = 510 OR A.GL_FLAG = 511 THEN 'Payment Sent'
-												WHEN A.GL_FLAG = 19 OR A.GL_FLAG = 20 OR A.GL_FLAG = 512 OR A.GL_FLAG = 513 THEN 'Receive Money'
-												WHEN A.GL_FLAG = 101 OR A.GL_FLAG = 26 OR A.GL_FLAG = 23 OR A.GL_FLAG = 201 OR A.GL_FLAG = 102 OR A.GL_FLAG = 203 OR A.GL_FLAG = 103 OR A.GL_FLAG = 104 OR A.GL_FLAG = 105 OR A.GL_FLAG = 106 OR A.GL_FLAG = 5553 OR A.GL_FLAG=5554 THEN 'Payments'
-												WHEN A.GL_FLAG = 107 OR A.GL_FLAG = 29 OR A.GL_FLAG = 28 OR A.GL_FLAG = 204 OR A.GL_FLAG = 205 OR A.GL_FLAG = 108 OR A.GL_FLAG = 109 OR A.GL_FLAG = 110 OR A.GL_FLAG = 111 OR A.GL_FLAG = 113 OR A.GL_FLAG = 114 OR A.GL_FLAG = 112 OR A.GL_FLAG = 5552 OR A.GL_FLAG =5551 THEN 'Receipts'
-												WHEN A.GL_FLAG = 115 OR A.GL_FLAG = 89 OR A.GL_FLAG = 90 OR A.GL_FLAG = 116 OR A.GL_FLAG = 117 THEN 'CHARGES'
-												WHEN A.GL_FLAG = 31 OR A.GL_FLAG = 32 OR A.GL_FLAG = 33 OR A.GL_FLAG = 34 THEN 'Partial Credit'
-												WHEN A.GL_FLAG = 37 OR A.GL_FLAG = 38 THEN 'Receive Order'
-												WHEN A.GL_FLAG = 39 OR A.GL_FLAG = 40 THEN 'Vendor Credit Memo'
-												WHEN A.GL_FLAG = 41 OR A.GL_FLAG = 42 OR A.GL_FLAG = 43 OR A.GL_FLAG = 44 OR A.GL_FLAG = 79 OR A.GL_FLAG = 80 OR A.GL_FLAG = 81 THEN 'Sale Invoice'
-												WHEN A.GL_FLAG = 45 OR A.GL_FLAG = 46 OR A.GL_FLAG = 47 OR A.GL_FLAG = 48  OR A.GL_FLAG = 82 OR A.GL_FLAG = 83 OR A.GL_FLAG = 84 THEN 'Sale Return'
-												WHEN A.GL_FLAG = 49 OR A.GL_FLAG = 50 OR A.GL_FLAG = 51 OR A.GL_FLAG = 52 OR A.GL_FLAG = 53 OR A.GL_FLAG = 54 OR A.GL_FLAG = 55 OR A.GL_FLAG = 56  OR A.GL_FLAG = 85 OR A.GL_FLAG = 86 OR A.GL_FLAG = 87 OR A.GL_FLAG = 100 THEN 'Replacement'
-												WHEN A.GL_FLAG = 57 OR A.GL_FLAG = 58 OR A.GL_FLAG = 59 OR A.GL_FLAG = 60 OR A.GL_FLAG = 150 OR A.GL_FLAG = 151 THEN 'Stock Transfer'
-												WHEN A.GL_FLAG = 62  OR A.GL_FLAG = 64 THEN 'Stock In'
-												WHEN A.GL_FLAG = 65 OR A.GL_FLAG = 66 OR A.GL_FLAG = 67 OR A.GL_FLAG = 68 OR A.GL_FLAG = 69 OR A.GL_FLAG = 70 THEN 'Adjustment'
-												WHEN A.GL_FLAG = 71 OR A.GL_FLAG = 72 THEN 'General Journal'
-												WHEN A.GL_FLAG = 75 OR A.GL_FLAG = 76 or A.GL_FLAG = 77 OR A.GL_FLAG = 78 THEN 'Repair IN'
-												WHEN A.GL_FLAG = 73 OR A.GL_FLAG = 74 THEN 'Repair Out'
-												WHEN A.GL_FLAG = 00 THEN 'BEGNING BALANCE'
+												WHEN ee.GL_FLAG = 15 OR ee.GL_FLAG = 16 OR ee.GL_FLAG = 510 OR ee.GL_FLAG = 511 THEN ''Payment Sent''
+												WHEN ee.GL_FLAG = 19 OR ee.GL_FLAG = 20 OR ee.GL_FLAG = 512 OR ee.GL_FLAG = 513 THEN ''Receive Money''
+												WHEN ee.GL_FLAG = 101 OR ee.GL_FLAG = 26 OR ee.GL_FLAG = 23 OR ee.GL_FLAG = 201 OR ee.GL_FLAG = 102 OR ee.GL_FLAG = 203 OR ee.GL_FLAG = 103 OR ee.GL_FLAG = 104 OR ee.GL_FLAG = 105 OR ee.GL_FLAG = 106 OR ee.GL_FLAG = 5553 OR ee.GL_FLAG=5554 THEN ''Payments''
+												WHEN ee.GL_FLAG = 107 OR ee.GL_FLAG = 29 OR ee.GL_FLAG = 28 OR ee.GL_FLAG = 204 OR ee.GL_FLAG = 205 OR ee.GL_FLAG = 108 OR ee.GL_FLAG = 109 OR ee.GL_FLAG = 110 OR ee.GL_FLAG = 111 OR ee.GL_FLAG = 113 OR ee.GL_FLAG = 114 OR ee.GL_FLAG = 112 OR ee.GL_FLAG = 5552 OR ee.GL_FLAG =5551 THEN ''Receipts''
+												WHEN ee.GL_FLAG = 115 OR ee.GL_FLAG = 89 OR ee.GL_FLAG = 90 OR ee.GL_FLAG = 116 OR ee.GL_FLAG = 117 THEN ''CHARGES''
+												WHEN ee.GL_FLAG = 31 OR ee.GL_FLAG = 32 OR ee.GL_FLAG = 33 OR ee.GL_FLAG = 34 THEN ''Partial Credit''
+												WHEN ee.GL_FLAG = 37 OR ee.GL_FLAG = 38 THEN ''Receive Order''
+												WHEN ee.GL_FLAG = 39 OR ee.GL_FLAG = 40 THEN ''Vendor Credit Memo''
+												WHEN ee.GL_FLAG = 41 OR ee.GL_FLAG = 42 OR ee.GL_FLAG = 43 OR ee.GL_FLAG = 44 OR ee.GL_FLAG = 79 OR ee.GL_FLAG = 80 OR ee.GL_FLAG = 81 THEN ''Sale Invoice''
+												WHEN ee.GL_FLAG = 45 OR ee.GL_FLAG = 46 OR ee.GL_FLAG = 47 OR ee.GL_FLAG = 48  OR ee.GL_FLAG = 82 OR ee.GL_FLAG = 83 OR ee.GL_FLAG = 84 THEN ''Sale Return''
+												WHEN ee.GL_FLAG = 49 OR ee.GL_FLAG = 50 OR ee.GL_FLAG = 51 OR ee.GL_FLAG = 52 OR ee.GL_FLAG = 53 OR ee.GL_FLAG = 54 OR ee.GL_FLAG = 55 OR ee.GL_FLAG = 56  OR ee.GL_FLAG = 85 OR ee.GL_FLAG = 86 OR ee.GL_FLAG = 87 OR ee.GL_FLAG = 100 THEN ''Replacement''
+												WHEN ee.GL_FLAG = 57 OR ee.GL_FLAG = 58 OR ee.GL_FLAG = 59 OR ee.GL_FLAG = 60 OR ee.GL_FLAG = 150 OR ee.GL_FLAG = 151 THEN ''Stock Transfer''
+												WHEN ee.GL_FLAG = 62  OR ee.GL_FLAG = 64 THEN ''Stock In''
+												WHEN ee.GL_FLAG = 65 OR ee.GL_FLAG = 66 OR ee.GL_FLAG = 67 OR ee.GL_FLAG = 68 OR ee.GL_FLAG = 69 OR ee.GL_FLAG = 70 THEN ''Adjustment''
+												WHEN ee.GL_FLAG = 71 OR ee.GL_FLAG = 72 THEN ''General Journal''
+												WHEN ee.GL_FLAG = 75 OR ee.GL_FLAG = 76 or ee.GL_FLAG = 77 OR ee.GL_FLAG = 78 THEN ''Repair IN''
+												WHEN ee.GL_FLAG = 73 OR ee.GL_FLAG = 74 THEN ''Repair Out''
+												WHEN ee.GL_FLAG = 00 THEN ''BEGNING BALANCE''
 												ELSE ''''
 										  END AS FORM_TYPE,
 										  DEBIT,
@@ -99,7 +99,7 @@ BEGIN
                                                     A.IS_CONFLICTED,
                                                     A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM (SELECT * FROM Payments_Accounting 
-										 WHERE FORM_FLAG ='PaymentSent' AND CASE
+										 WHERE FORM_FLAG ="PaymentSent" AND CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -157,7 +157,7 @@ BEGIN
                                                     A.IS_CONFLICTED,
                                                     A.Form_Detail_ID AS DETAIL_ID
 											   FROM (SELECT * FROM Payments_Accounting 
-											 WHERE FORM_FLAG = 'ReceiveMoney' AND CASE
+											 WHERE FORM_FLAG = "ReceiveMoney" AND CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -223,7 +223,7 @@ BEGIN
                                                      A.IS_CONFLICTED,
                                                      A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM  (SELECT * FROM Payments_Accounting 
-								 WHERE FORM_FLAG = 'Payments' and CASE
+								 WHERE FORM_FLAG = "Payments" and CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -291,7 +291,7 @@ BEGIN
 													A.IS_CONFLICTED,
                                                     A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM (SELECT * FROM  Payments_Accounting 
-									 WHERE FORM_FLAG = 'RECEIPTS' AND CASE
+									 WHERE FORM_FLAG = "RECEIPTS" AND CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -348,7 +348,7 @@ BEGIN
 													A.IS_CONFLICTED,
                                                     A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM  (SELECT * FROM Purchase_Accounting 
-						 WHERE FORM_FLAG = 'PartialCredit' and CASE
+						 WHERE FORM_FLAG = "PartialCredit" and CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -404,7 +404,7 @@ BEGIN
 													A.IS_CONFLICTED,
                                                     A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM ( SELECT * FROM Purchase_Accounting 
-									 WHERE FORM_FLAG = 'ReceiveOrder' and CASE
+									 WHERE FORM_FLAG = "ReceiveOrder" and CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -460,7 +460,7 @@ BEGIN
 													A.IS_CONFLICTED,
                                                     A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM  (SELECT * FROM Payments_Accounting
-									 WHERE FORM_FLAG='VendorCreditMemo' and CASE
+									 WHERE FORM_FLAG="VendorCreditMemo" and CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -521,7 +521,7 @@ BEGIN
 													A.IS_CONFLICTED,
                                                     A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM  (SELECT * FROM Sales_Accounting 
-												 WHERE Form_Flag = 'SaleInvoice' and CASE
+												 WHERE Form_Flag = "SaleInvoice" and CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -584,7 +584,7 @@ BEGIN
                                                     A.IS_CONFLICTED,
                                                     A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM  (SELECT * FROM Sales_Accounting 
-		                                  WHERE FORM_FLAG = 'SaleReturn' and CASE
+		                                  WHERE FORM_FLAG = "SaleReturn" and CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -654,8 +654,8 @@ BEGIN
 													A.ID AS FORM_ID,
 													A.IS_CONFLICTED,
                                                     A.Form_DETAIL_ID AS DETAIL_ID
-											   FROM  (SELECT * FROM Replacement 
-												 WHERE FORM_FLAG='Replacement' and CASE
+											   FROM  (SELECT * FROM Sales_Accounting 
+												 WHERE FORM_FLAG="Replacement" and CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -715,7 +715,7 @@ BEGIN
 													A.IS_CONFLICTED,
                                                     A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM  (SELECT * FROM Stock_Accounting 
-										 WHERE FORM_FLAG = 'StockTransfer' and CASE
+										 WHERE FORM_FLAG = "StockTransfer" and CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -771,7 +771,7 @@ BEGIN
 													A.IS_CONFLICTED,
                                                     A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM  (SELECT * FROM Stock_Accounting 
-										 WHERE FORM_FLAG = 'StockIn' and CASE
+										 WHERE FORM_FLAG = "StockIn" and CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -831,7 +831,7 @@ BEGIN
 													A.IS_CONFLICTED,
                                                     A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM  (SELECT * FROM Adjustment_Accounting 
-									 WHERE Form_Flag = 'Adjustment' and CASE
+									 WHERE Form_Flag = "Adjustment" and CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -888,7 +888,7 @@ BEGIN
                                                     A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM  (SELECT * FROM Adjustment_Accounting 
 											   
-									 WHERE Form_Flag = 'GeneralJournal' and CASE
+									 WHERE Form_Flag = "GeneralJournal" and CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -944,7 +944,7 @@ BEGIN
 													A.IS_CONFLICTED,
                                                     A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM  (SELECT * FROM Repair_Accounting 
-											 WHERE Form_Flag='RepairOut' and CASE
+											 WHERE Form_Flag="RepairOut" and CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
@@ -1001,7 +1001,7 @@ BEGIN
 													A.IS_CONFLICTED,
                                                     A.Form_DETAIL_ID AS DETAIL_ID
 											   FROM  (SELECT * FROM Repair_Accounting 
-												 WHERE Form_Flag = 'RepairIn' and CASE
+												 WHERE Form_Flag = "RepairIn" and CASE
 													  WHEN \'',P_COMPANY_ID,'\' <> "" THEN COMPANY_ID = \'',P_COMPANY_ID,'\'
 															  ELSE TRUE
 																   END
